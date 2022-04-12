@@ -3,12 +3,12 @@ import { SocialMediaLinkData, socialMediaLinks } from '../data/socialMediaLinks'
 import { BREAKPOINTS } from '../constants'
 
 type ButtonColors = 'white' | 'blue'
-interface SocialMediaLinkProps {
+interface LinkProps {
   color: ButtonColors
   link: SocialMediaLinkData
 }
 
-interface SocialMediaLinksProps {
+interface LinksProps {
   color: ButtonColors
 }
 
@@ -50,16 +50,13 @@ const Image = styled('img')`
   }
 `
 
-const SocialMediaLink = ({
-  color,
-  link: { link, name, iconBlue, iconWhite },
-}: SocialMediaLinkProps) => (
+const SocialMediaLink = ({ color, link: { link, name, iconBlue, iconWhite } }: LinkProps) => (
   <Link href={link} target="_blank" rel="noreferrer">
     <Image src={color === 'blue' ? iconBlue : iconWhite} alt={name} />
   </Link>
 )
 
-const SocialMediaLinks = ({ color = 'blue' }: SocialMediaLinksProps) => (
+const SocialMediaLinks = ({ color = 'blue' }: LinksProps) => (
   <div>
     {socialMediaLinks.map(link => (
       <SocialMediaLink key={link.name} color={color} link={link} />
