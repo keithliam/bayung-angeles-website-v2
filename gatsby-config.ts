@@ -1,23 +1,41 @@
-import type { GatsbyConfig } from "gatsby";
+/* eslint-disable unicorn/filename-case */
+import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Báyung Ángeles`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.bayungangeles.org`,
   },
-  plugins: ["gatsby-plugin-emotion", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/icon.png',
+      },
     },
-    __key: "images"
-  }]
-};
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        // Default settings that may be ommitted or customized
+        stages: ['develop'],
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        exclude: ['node_modules', 'bower_components', '.cache', 'public'],
+      },
+    },
+  ],
+}
 
-export default config;
+export default config
