@@ -12,7 +12,7 @@ interface LinksProps {
   color: ButtonColors
 }
 
-const Link = styled('a')`
+const Link = styled.a`
   display: inline-block;
   height: 50px;
 
@@ -41,7 +41,7 @@ const Link = styled('a')`
   }
 `
 
-const Image = styled('img')`
+const Image = styled.img`
   height: 100%;
   transition: filter 0.3s ease-out;
 
