@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { BREAKPOINTS, FONT_FAMILY } from '../constants'
+import { MEDIAQUERY, FONT_FAMILY } from '../constants'
 
 interface Props {
   title: string
@@ -24,15 +24,15 @@ const Link = styled.a`
     filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
   }
 
-  @media (max-width: ${BREAKPOINTS.SMALL}) {
+  ${MEDIAQUERY.SMALL} {
     font-size: 14px;
   }
 
-  @media (max-width: ${BREAKPOINTS.TABLET}) {
+  ${MEDIAQUERY.TABLET} {
     font-size: 12px;
   }
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+  ${MEDIAQUERY.MOBILE} {
     right: 8px;
     bottom: 8px;
   }

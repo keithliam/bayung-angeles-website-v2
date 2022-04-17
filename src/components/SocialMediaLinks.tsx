@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { SocialMediaLinkData, socialMediaLinks } from '../data/socialMediaLinks'
-import { BREAKPOINTS } from '../constants'
+import { MEDIAQUERY } from '../constants'
 
 type ButtonColors = 'white' | 'blue'
 interface LinkProps {
@@ -20,11 +20,11 @@ const Link = styled.a`
     margin-right: 20px;
   }
 
-  @media (max-width: ${BREAKPOINTS.LARGE}) {
+  ${MEDIAQUERY.LARGE} {
     height: 50px;
   }
 
-  @media (max-width: ${BREAKPOINTS.TABLET}) {
+  ${MEDIAQUERY.TABLET} {
     height: 45px;
 
     &:not(:last-of-type) {
@@ -32,7 +32,7 @@ const Link = styled.a`
     }
   }
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+  ${MEDIAQUERY.MOBILE} {
     height: 40px;
 
     &:not(:last-of-type) {

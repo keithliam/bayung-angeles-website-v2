@@ -1,8 +1,8 @@
-export const BREAKPOINTS = {
-  LARGE: '1152px',
-  SMALL: '960px',
-  TABLET: '768px',
-  MOBILE: '480px',
+export const MEDIAQUERY = {
+  LARGE: '@media (max-width: 1152px)',
+  SMALL: '@media (max-width: 960px)',
+  TABLET: '@media (max-width: 768px)',
+  MOBILE: '@media (max-width: 480px)',
 } as const
 
 export const FONT_FAMILY = {
