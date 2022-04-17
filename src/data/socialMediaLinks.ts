@@ -18,25 +18,25 @@ export const socialMediaLinks: SocialMediaLinkData[] = [
   {
     name: 'Facebook',
     link: 'https://bit.ly/bayung-angeles-facebook-page',
-    iconBlue: facebookBlue as string,
-    iconWhite: facebookWhite as string,
+    iconBlue: facebookBlue,
+    iconWhite: facebookWhite,
   },
   {
     name: 'Instagram',
     link: 'https://bit.ly/bayung-angeles-instagram',
-    iconBlue: instagramBlue as string,
-    iconWhite: instagramWhite as string,
+    iconBlue: instagramBlue,
+    iconWhite: instagramWhite,
   },
   {
     name: 'Twitter',
     link: 'https://bit.ly/bayung-angeles-twitter',
-    iconBlue: twitterBlue as string,
-    iconWhite: twitterWhite as string,
+    iconBlue: twitterBlue,
+    iconWhite: twitterWhite,
   },
   {
     name: 'TikTok',
     link: 'https://bit.ly/bayung-angeles-tiktok',
-    iconBlue: tiktokBlue as string,
-    iconWhite: tiktokWhite as string,
+    iconBlue: tiktokBlue,
+    iconWhite: tiktokWhite,
   },
 ]
