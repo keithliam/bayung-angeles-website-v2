@@ -175,6 +175,17 @@ const ScrollDownButton = styled.a`
   &:hover {
     filter: drop-shadow(0 0 8px white);
   }
+
+  @keyframes bounce-down {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(0, 10px);
+    }
+  }
 `
 
 const photoCreditStyles = css`
