@@ -3,6 +3,7 @@ import wingGold from '../images/wing-gold.svg'
 
 export type WingPosition = 'start' | 'end'
 interface Props {
+  className?: string
   text: string
   wingPosition: WingPosition
 }
@@ -19,8 +20,8 @@ const Wing = styled.img<{ position: WingPosition }>`
   ${({ position }) => (position === 'start' ? 'left: 0.33em' : 'right: -0.45em')};
 `
 
-const WingText = ({ text, wingPosition }: Props) => (
-  <TextContainer>
+const WingText = ({ className, text, wingPosition }: Props) => (
+  <TextContainer className={className}>
     {text}
     <Wing src={wingGold} alt="wing" position={wingPosition} />
   </TextContainer>

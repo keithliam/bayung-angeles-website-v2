@@ -1,9 +1,10 @@
+import React from 'react'
 import styled from '@emotion/styled'
 import { MEDIAQUERY, FONT_FAMILY } from '../constants'
 
 interface Props {
   className?: string
-  title: string
+  title?: string
   name: string
   link: string
 }
@@ -45,7 +46,12 @@ const Span = styled.span`
 
 const PhotoCredit = ({ className, title, name, link }: Props) => (
   <Link className={className} href={link}>
-    <Span>{title}</Span> <Span>© {name}</Span>
+    {title && (
+      <>
+        <Span>{title}</Span>{' '}
+      </>
+    )}
+    <Span>© {name}</Span>
   </Link>
 )
 
