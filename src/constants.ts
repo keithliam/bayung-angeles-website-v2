@@ -9,7 +9,7 @@ export const MEDIAQUERY = {
 
 export const FONT_FAMILY = {
   HEADING: "'Maragsa', Helvetica, Arial, sans-serif",
-  BODY: "'Public Sans', Helvetica, Arial, sans-serif",
+  BODY: "'Public SansVariable', Helvetica, Arial, sans-serif",
 }
 
 export const FONT_WEIGHT = {
