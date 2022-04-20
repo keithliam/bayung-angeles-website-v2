@@ -1,14 +1,18 @@
 import styled from '@emotion/styled'
+import { Interpolation, Theme } from '@emotion/react'
 import { SocialMediaLinkData, socialMediaLinks } from '../data/socialMediaLinks'
 import { MEDIAQUERY } from '../constants'
 
 type ButtonColors = 'white' | 'blue'
 interface LinkProps {
+  className?: string
   color: ButtonColors
   link: SocialMediaLinkData
 }
 
 interface LinksProps {
+  className?: string
+  linkCss?: Interpolation<Theme>
   color: ButtonColors
 }
 
@@ -50,16 +54,24 @@ const Image = styled.img`
   }
 `
 
-const SocialMediaLink = ({ color, link: { link, name, iconBlue, iconWhite } }: LinkProps) => (
-  <Link href={link} target="_blank" rel="noreferrer">
+const SocialMediaLink = ({
+  className,
+  color,
+  link: { link, name, iconBlue, iconWhite },
+}: LinkProps) => (
+  <Link className={className} href={link} target="_blank" rel="noreferrer">
     <Image src={color === 'blue' ? iconBlue : iconWhite} alt={name} />
   </Link>
 )
 
-const SocialMediaLinks = ({ color = 'blue' }: LinksProps) => (
-  <div>
+SocialMediaLink.defaultProps = {
+  className: undefined,
+}
+
+const SocialMediaLinks = ({ className, linkCss, color = 'blue' }: LinksProps) => (
+  <div className={className}>
     {socialMediaLinks.map(link => (
-      <SocialMediaLink key={link.name} color={color} link={link} />
+      <SocialMediaLink css={linkCss} key={link.name} color={color} link={link} />
     ))}
   </div>
 )
