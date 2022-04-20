@@ -49,5 +49,6 @@ export const GLOBAL_CSS = css`
     font-family: ${FONT_FAMILY.BODY};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: ${COLORS.BA_BLUE};
   }
 `
