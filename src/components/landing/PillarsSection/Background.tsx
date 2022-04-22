@@ -109,7 +109,7 @@ const Background = ({ sectionRef }: Props) => {
           css={backgroundImageStyles}
           placeholder="blurred"
           layout="fullWidth"
-          src="../../images/ba-illus.jpg"
+          src="../../../images/ba-illus.jpg"
           alt="illustration"
         />
       </BackgroundAnimation>
@@ -123,7 +123,7 @@ const Background = ({ sectionRef }: Props) => {
           formats={['png']}
           height={200}
           width={300}
-          src="../../images/ba-logo-mini-white.png"
+          src="../../../images/ba-logo-mini-white.png"
           alt="logo"
         />
       </LogoAnimation>
