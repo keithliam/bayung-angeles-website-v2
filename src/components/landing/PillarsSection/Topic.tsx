@@ -36,7 +36,7 @@ const Highlight = styled.span`
   color: ${COLORS.BA_GOLD};
 `
 
-const wingTextTransitionStyles = {
+const topicTransitionStyles = {
   enter: `
     transform: translateY(75%);
     opacity: 0;
@@ -68,10 +68,10 @@ const Topic = ({ topic }: Props) => (
           <CSSTransition
             key={topic}
             classNames={{
-              enter: generateCss(wingTextTransitionStyles.enter),
-              enterActive: generateCss(wingTextTransitionStyles.enterExitActive),
-              exit: generateCss(wingTextTransitionStyles.exit),
-              exitActive: generateCss(wingTextTransitionStyles.enterExitActive),
+              enter: generateCss(topicTransitionStyles.enter),
+              enterActive: generateCss(topicTransitionStyles.enterExitActive),
+              exit: generateCss(topicTransitionStyles.exit),
+              exitActive: generateCss(topicTransitionStyles.enterExitActive),
             }}
             timeout={500}
           >
