@@ -45,8 +45,8 @@ const logoImageStyles = css`
   position: absolute;
   left: 50%;
   top: 50%;
-  max-height: 30vh;
-  max-width: 50vw;
+  height: 28vh;
+  aspect-ratio: 1.135;
   transition: filter 3s ease-out;
   pointer-events: none;
   animation: wing-fly 3s cubic-bezier(0.31, 0.02, 0.36, 0.94) infinite alternate;
@@ -121,8 +121,7 @@ const Background = ({ sectionRef }: Props) => {
           layout="constrained"
           placeholder="blurred"
           formats={['png']}
-          height={200}
-          width={300}
+          width={330}
           src="../../../images/ba-logo-mini-white.png"
           alt="logo"
         />
