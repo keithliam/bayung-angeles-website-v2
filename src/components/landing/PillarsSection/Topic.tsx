@@ -1,8 +1,8 @@
 import { ClassNames, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY } from '../../../constants'
 import WingText from '../../WingText'
+import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY } from '../../../constants'
 
 interface Props {
   topic: string
