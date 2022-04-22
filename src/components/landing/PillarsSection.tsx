@@ -6,6 +6,7 @@ import Sticky from 'react-stickynode'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import PhotoCredit from '../PhotoCredit'
 import WingText from '../WingText'
+import { useSectionVisibilityObserver, useSubsectionIndexObserver } from '../../hooks'
 import { registerScrollResizeEventListeners } from '../../helpers'
 import { topics } from '../../data/pillars'
 import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY, PADDING } from '../../constants'
@@ -209,8 +210,8 @@ const Description = styled.span`
 
 const PillarsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [topicIndex, setTopicIndex] = useState(0)
-  const [entireSectionInView, setEntireSectionInView] = useState(false)
+  const topicIndex = useSubsectionIndexObserver(sectionRef, lastTopicIndex)
+  const entireSectionInView = useSectionVisibilityObserver(sectionRef)
   const [showLogo, setShowLogo] = useState(false)
   const [backgroundScale, setBackgroundScale] = useState(1)
 
@@ -218,29 +219,18 @@ const PillarsSection = () => {
     const handleScrollResizeEvent = () => {
       if (window && sectionRef.current) {
         const viewportHeight = window.innerHeight
-        const { top, bottom } = sectionRef.current.getBoundingClientRect()
+        const { top } = sectionRef.current.getBoundingClientRect()
 
-        const newTopicIndex = (() => {
-          const nthTopic = Math.floor(-top / viewportHeight)
-          if (nthTopic < 0) return 0
-          if (nthTopic > lastTopicIndex) return lastTopicIndex
-          return nthTopic
-        })()
-        setTopicIndex(newTopicIndex)
+        setShowLogo(entireSectionInView && top + viewportHeight * 0.2 < 0)
 
         const scrolledPastSectionTop = top < 0
-        const newEntireSectionInView = scrolledPastSectionTop && bottom - viewportHeight > 0
-        setEntireSectionInView(newEntireSectionInView)
-
-        setShowLogo(newEntireSectionInView && top + viewportHeight * 0.2 < 0)
-
         const newScale = scrolledPastSectionTop ? 1 + -top / 50_000 : 1
         const roundedScale = Math.floor(newScale * 1000) / 1000
         setBackgroundScale(roundedScale)
       }
     }
     return registerScrollResizeEventListeners(handleScrollResizeEvent)
-  }, [])
+  }, [entireSectionInView])
 
   const { title, description } = topics[topicIndex]
 
