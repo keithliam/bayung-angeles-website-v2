@@ -15,7 +15,7 @@ const PILLARS_SECTION_ID = 'pillars'
 const lastTopicIndex = topics.length - 1
 
 const SectionContainer = styled.div`
-  height: 400vh;
+  height: ${(topics.length + 1) * 100}vh;
   width: 100%;
   background-color: ${COLORS.BA_BLUE};
 `
