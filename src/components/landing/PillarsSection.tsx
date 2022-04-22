@@ -191,28 +191,19 @@ const Description = styled.span`
   z-index: 100;
 
   ${MEDIAQUERY.SMALL} {
-    &,
-    .highlight {
-      margin-top: 14px;
-      font-size: 21px;
-    }
+    margin-top: 14px;
+    font-size: 21px;
   }
 
   ${MEDIAQUERY.TABLET} {
-    &,
-    .highlight {
-      margin-top: 10px;
-      font-size: 18px;
-    }
+    margin-top: 10px;
+    font-size: 18px;
   }
 
   ${MEDIAQUERY.MOBILE} {
-    &,
-    .highlight {
-      max-width: none;
-      margin-top: 8px;
-      font-size: 15px;
-    }
+    max-width: none;
+    margin-top: 8px;
+    font-size: 15px;
   }
 `
 
