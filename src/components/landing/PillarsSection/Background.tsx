@@ -6,6 +6,13 @@ import PhotoCredit from '../../PhotoCredit'
 import { useSectionVisibilityObserver } from '../../../hooks'
 import { registerScrollResizeEventListeners } from '../../../helpers'
 
+const LOGO_IMAGE_SOURCE = '../../../images/ba-logo-mini-white.png'
+const LOGO_IMAGE_INFO = {
+  aspectRatio: 1.135,
+  maxHeight: 291,
+  maxWidth: 330,
+}
+
 interface Props {
   sectionRef: RefObject<HTMLElement>
 }
@@ -45,8 +52,9 @@ const logoImageStyles = css`
   position: absolute;
   left: 50%;
   top: 50%;
-  max-height: 30vh;
-  max-width: 50vw;
+  height: 28vh;
+  max-height: ${LOGO_IMAGE_INFO.maxHeight}px;
+  aspect-ratio: ${LOGO_IMAGE_INFO.aspectRatio};
   transition: filter 3s ease-out;
   pointer-events: none;
   animation: wing-fly 3s cubic-bezier(0.31, 0.02, 0.36, 0.94) infinite alternate;
@@ -121,9 +129,8 @@ const Background = ({ sectionRef }: Props) => {
           layout="constrained"
           placeholder="blurred"
           formats={['png']}
-          height={200}
-          width={300}
-          src="../../../images/ba-logo-mini-white.png"
+          width={LOGO_IMAGE_INFO.maxWidth}
+          src={LOGO_IMAGE_SOURCE}
           alt="logo"
         />
       </LogoAnimation>
