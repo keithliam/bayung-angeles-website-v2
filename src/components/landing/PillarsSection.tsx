@@ -259,7 +259,7 @@ const PillarsSection = () => {
   const { title, description } = topics[topicIndex]
 
   return (
-    <SectionContainer ref={sectionRef} id={PILLARS_SECTION_ID} className="pillars">
+    <SectionContainer ref={sectionRef} id={PILLARS_SECTION_ID}>
       <Sticky bottomBoundary={`#${PILLARS_SECTION_ID}`}>
         <StickyContainer>
           <ClassNames>
@@ -298,8 +298,8 @@ const PillarsSection = () => {
                   name="Brandon Evangelista"
                   link="https://bit.ly/bayung-angeles-portfolio-brandon"
                 />
-                <Topic className="topic">
-                  <Highlight className="highlight">Our </Highlight>
+                <Topic>
+                  <Highlight>Our </Highlight>
                   <SwitchTransition mode="out-in">
                     <CSSTransition
                       key={title}
@@ -326,7 +326,7 @@ const PillarsSection = () => {
                     }}
                     timeout={1250}
                   >
-                    <Description className="description">{description}</Description>
+                    <Description>{description}</Description>
                   </CSSTransition>
                 </SwitchTransition>
               </>
