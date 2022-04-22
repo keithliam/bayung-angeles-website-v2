@@ -1,7 +1,7 @@
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import CoverSection from '../components/landing/CoverSection'
-import PillarsSection from '../components/landing/PillarsSection'
+import PillarsSection from '../components/landing/PillarsSection/PillarsSection'
 import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
