@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import CoverSection from '../components/landing/CoverSection'
 import PillarsSection from '../components/landing/PillarsSection/PillarsSection'
 import ImagineSection from '../components/landing/ImagineSection/ImagineSection'
+import QuoteSection from '../components/landing/QuoteSection'
 import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
@@ -21,6 +22,7 @@ const IndexPage = () => (
     <CoverSection />
     <PillarsSection />
     <ImagineSection />
+    <QuoteSection />
   </Container>
 )
 

@@ -52,3 +52,26 @@ export const GLOBAL_CSS = css`
     background-color: ${COLORS.BA_BLUE};
   }
 `
+
+export const HEADING_LINE_STYLES = `
+  font-family: ${FONT_FAMILY.HEADING};
+  font-size: 46px;
+  letter-spacing: 0.065em;
+  display: block;
+
+  ${MEDIAQUERY.LARGE} {
+    font-size: 40px;
+  }
+
+  ${MEDIAQUERY.SMALL} {
+    font-size: 38px;
+  }
+
+  ${MEDIAQUERY.TABLET} {
+    font-size: 35px;
+  }
+
+  ${MEDIAQUERY.MOBILE} {
+    font-size: 30px;
+  }
+`
