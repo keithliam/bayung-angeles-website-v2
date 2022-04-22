@@ -48,7 +48,7 @@ const StickyContainer = styled.div`
   }
 `
 
-const BackgroundAnimation = styled.div<{ visible: boolean }>`
+const BackgroundAnimation = styled.div<{ visible: boolean; scale: number }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -62,6 +62,9 @@ const BackgroundAnimation = styled.div<{ visible: boolean }>`
     `
     opacity: 0.4;
     filter: blur(0);
+  `}
+  ${({ scale }) => `
+    transform: scale(${scale})
   `}
 `
 const backgroundImageStyles = css`
@@ -143,7 +146,7 @@ const Highlight = styled.span`
   color: ${COLORS.BA_GOLD};
 `
 
-const wingTextAnimationStyles = {
+const wingTextTransitionStyles = {
   enter: `
     transform: translateY(75%);
     opacity: 0;
@@ -166,20 +169,12 @@ const wingTextStyles = css`
   color: white;
 `
 
-const descriptionAnimationStyles = {
-  enter: `
-    opacity: 0;
+const descriptionTransitionStyles = {
+  enterExitExitActive: `
     transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
+    opacity: 0;
   `,
   enterActive: `
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
-  `,
-  exit: `
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
-  `,
-  exitActive: `
     opacity: 1;
     transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
   `,
@@ -265,12 +260,7 @@ const PillarsSection = () => {
           <ClassNames>
             {({ css: generateCss }) => (
               <>
-                <BackgroundAnimation
-                  css={css`
-                    transform: scale(${backgroundScale});
-                  `}
-                  visible={entireSectionInView}
-                >
+                <BackgroundAnimation visible={entireSectionInView} scale={backgroundScale}>
                   <StaticImage
                     css={backgroundImageStyles}
                     placeholder="blurred"
@@ -304,10 +294,10 @@ const PillarsSection = () => {
                     <CSSTransition
                       key={title}
                       classNames={{
-                        enter: generateCss(wingTextAnimationStyles.enter),
-                        enterActive: generateCss(wingTextAnimationStyles.enterExitActive),
-                        exit: generateCss(wingTextAnimationStyles.exit),
-                        exitActive: generateCss(wingTextAnimationStyles.enterExitActive),
+                        enter: generateCss(wingTextTransitionStyles.enter),
+                        enterActive: generateCss(wingTextTransitionStyles.enterExitActive),
+                        exit: generateCss(wingTextTransitionStyles.exit),
+                        exitActive: generateCss(wingTextTransitionStyles.enterExitActive),
                       }}
                       timeout={500}
                     >
@@ -317,12 +307,12 @@ const PillarsSection = () => {
                 </Topic>
                 <SwitchTransition mode="out-in">
                   <CSSTransition
-                    key={title}
+                    key={description}
                     classNames={{
-                      enter: generateCss(descriptionAnimationStyles.enter),
-                      enterActive: generateCss(descriptionAnimationStyles.enterActive),
-                      exit: generateCss(descriptionAnimationStyles.exit),
-                      exitActive: generateCss(descriptionAnimationStyles.exitActive),
+                      enter: generateCss(descriptionTransitionStyles.enterExitExitActive),
+                      enterActive: generateCss(descriptionTransitionStyles.enterActive),
+                      exit: generateCss(descriptionTransitionStyles.enterExitExitActive),
+                      exitActive: generateCss(descriptionTransitionStyles.enterExitExitActive),
                     }}
                     timeout={1250}
                   >
