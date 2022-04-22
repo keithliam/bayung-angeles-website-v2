@@ -1,13 +1,12 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import styled from '@emotion/styled'
-import { ClassNames } from '@emotion/react'
 import Sticky from 'react-stickynode'
-import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import Background from './Background'
 import Topic from './Topic'
 import { useSubsectionIndexObserver } from '../../../hooks'
 import { topics } from '../../../data/pillars'
-import { COLORS, FONT_FAMILY, MEDIAQUERY, PADDING } from '../../../constants'
+import { COLORS, MEDIAQUERY, PADDING } from '../../../constants'
+import Description from './Description'
 
 const PILLARS_SECTION_ID = 'pillars'
 
@@ -47,44 +46,6 @@ const StickyContainer = styled.div`
   }
 `
 
-const descriptionTransitionStyles = {
-  enterExitExitActive: `
-    transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
-    opacity: 0;
-  `,
-  enterActive: `
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.87, 0.2, 0.61, 0.99);
-  `,
-}
-const Description = styled.span`
-  display: flex;
-  flex-direction: column;
-  font-family: ${FONT_FAMILY.BODY};
-  font-size: 22px;
-  margin-top: 16px;
-  line-height: 1.15em;
-  max-width: 80%;
-  height: 2.5em;
-  z-index: 100;
-
-  ${MEDIAQUERY.SMALL} {
-    margin-top: 14px;
-    font-size: 21px;
-  }
-
-  ${MEDIAQUERY.TABLET} {
-    margin-top: 10px;
-    font-size: 18px;
-  }
-
-  ${MEDIAQUERY.MOBILE} {
-    max-width: none;
-    margin-top: 8px;
-    font-size: 15px;
-  }
-`
-
 const PillarsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const topicIndex = useSubsectionIndexObserver(sectionRef, lastTopicIndex)
@@ -95,28 +56,9 @@ const PillarsSection = () => {
     <SectionContainer ref={sectionRef} id={PILLARS_SECTION_ID}>
       <Sticky bottomBoundary={`#${PILLARS_SECTION_ID}`}>
         <StickyContainer>
-          <ClassNames>
-            {({ css: generateCss }) => (
-              <>
-                <Background sectionRef={sectionRef} />
-                <Topic topic={title} />
-                <SwitchTransition mode="out-in">
-                  <CSSTransition
-                    key={description}
-                    classNames={{
-                      enter: generateCss(descriptionTransitionStyles.enterExitExitActive),
-                      enterActive: generateCss(descriptionTransitionStyles.enterActive),
-                      exit: generateCss(descriptionTransitionStyles.enterExitExitActive),
-                      exitActive: generateCss(descriptionTransitionStyles.enterExitExitActive),
-                    }}
-                    timeout={1250}
-                  >
-                    <Description>{description}</Description>
-                  </CSSTransition>
-                </SwitchTransition>
-              </>
-            )}
-          </ClassNames>
+          <Background sectionRef={sectionRef} />
+          <Topic topic={title} />
+          <Description text={description} />
         </StickyContainer>
       </Sticky>
     </SectionContainer>
