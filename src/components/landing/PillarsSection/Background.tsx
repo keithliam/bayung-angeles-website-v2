@@ -7,11 +7,9 @@ import { useSectionVisibilityObserver } from '../../../hooks'
 import { registerScrollResizeEventListeners } from '../../../helpers'
 
 const LOGO_IMAGE_SOURCE = '../../../images/ba-logo-mini-white.png'
-const LOGO_IMAGE_INFO = {
-  aspectRatio: 1.135,
-  maxHeight: 291,
-  maxWidth: 330,
-}
+const LOGO_IMAGE_ASPECT_RATIO = 1.135
+const LOGO_IMAGE_MAX_HEIGHT = 291
+const LOGO_IMAGE_MAX_WIDTH = 330
 
 interface Props {
   sectionRef: RefObject<HTMLElement>
@@ -53,8 +51,8 @@ const logoImageStyles = css`
   left: 50%;
   top: 50%;
   height: 28vh;
-  max-height: ${LOGO_IMAGE_INFO.maxHeight}px;
-  aspect-ratio: ${LOGO_IMAGE_INFO.aspectRatio};
+  max-height: ${LOGO_IMAGE_MAX_HEIGHT}px;
+  aspect-ratio: ${LOGO_IMAGE_ASPECT_RATIO};
   transition: filter 3s ease-out;
   pointer-events: none;
   animation: wing-fly 3s cubic-bezier(0.31, 0.02, 0.36, 0.94) infinite alternate;
@@ -129,7 +127,7 @@ const Background = ({ sectionRef }: Props) => {
           layout="constrained"
           placeholder="blurred"
           formats={['png']}
-          width={LOGO_IMAGE_INFO.maxWidth}
+          width={LOGO_IMAGE_MAX_WIDTH}
           src={LOGO_IMAGE_SOURCE}
           alt="logo"
         />
