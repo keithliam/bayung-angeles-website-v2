@@ -1,4 +1,11 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
+
+export interface GatsbyImageQueryFile {
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData
+  }
+}
 
 export const MEDIAQUERY = {
   LARGE: '@media (max-width: 1152px)',
