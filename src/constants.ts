@@ -1,4 +1,11 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
+
+export interface GatsbyImageQueryFile {
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData
+  }
+}
 
 export const MEDIAQUERY = {
   LARGE: '@media (max-width: 1152px)',
@@ -75,3 +82,8 @@ export const HEADING_LINE_STYLES = `
     font-size: 30px;
   }
 `
+
+export const TEAM_CARDS_BREAKPOINT_MOBILE = '610px'
+export const TEAM_CARDS_BORDER_RADIUS = '15px'
+export const TEAM_CARDS_BACKGROUND_COLOR = '#EBEBEB'
+export const TEAM_CARDS_SHADOW = '0 0 20px rgba(0, 0, 0, 0.13)'
