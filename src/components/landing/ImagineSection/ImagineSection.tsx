@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import Sticky from 'react-stickynode'
 import BackgroundImage from './BackgroundImage'
@@ -8,7 +7,14 @@ import Topic from './Topic'
 import PhotoInfo from './PhotoInfo'
 import { useSubsectionIndexObserver } from '../../../hooks'
 import { allPhotos, getTopicAndPhoto } from '../../../data/imagine'
-import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY, PADDING } from '../../../constants'
+import {
+  GatsbyImageQueryFile,
+  COLORS,
+  FONT_FAMILY,
+  FONT_WEIGHT,
+  MEDIAQUERY,
+  PADDING,
+} from '../../../constants'
 
 const lastPhotoIndex = allPhotos.length - 1
 
@@ -54,18 +60,13 @@ const ImagineText = styled.span`
   }
 `
 
-interface ImageQueryFile {
-  childImageSharp: {
-    gatsbyImageData: IGatsbyImageData
-  }
-}
 interface ImagineQueryData {
-  [k: string]: ImageQueryFile | undefined
-  healthCareProjectsPhoto: ImageQueryFile
-  dialysisCenterPhoto: ImageQueryFile
-  civilCivicProjectsPhoto: ImageQueryFile
-  foodStripPhoto: ImageQueryFile
-  housingProjectsPhoto: ImageQueryFile
+  [k: string]: GatsbyImageQueryFile | undefined
+  healthCareProjectsPhoto: GatsbyImageQueryFile
+  dialysisCenterPhoto: GatsbyImageQueryFile
+  civilCivicProjectsPhoto: GatsbyImageQueryFile
+  foodStripPhoto: GatsbyImageQueryFile
+  housingProjectsPhoto: GatsbyImageQueryFile
 }
 
 const query = graphql`
