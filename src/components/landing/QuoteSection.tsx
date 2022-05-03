@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { StaticImage } from 'gatsby-plugin-image'
+import Heading from '../Heading'
 import { registerScrollResizeEventListeners } from '../../helpers'
-import { MEDIAQUERY, FONT_FAMILY, COLORS, PADDING, HEADING_LINE_STYLES } from '../../constants'
+import { MEDIAQUERY, FONT_FAMILY, COLORS, PADDING } from '../../constants'
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -46,8 +47,7 @@ const logoImageStyles = css`
   float: right;
 `
 
-const QuoteBody = styled.div`
-  ${HEADING_LINE_STYLES}
+const quoteBodyStyles = css`
   color: white;
   position: relative;
 
@@ -140,7 +140,7 @@ const CoverSection = () => {
           alt="BA logo"
         />
       </LogoAnimation>
-      <QuoteBody>
+      <Heading css={quoteBodyStyles}>
         <QuoteLine>We need leaders</QuoteLine>
         <QuoteLine>not in love with money</QuoteLine>
         <QuoteLine>
@@ -157,7 +157,7 @@ const CoverSection = () => {
             humanity.
           </HighlightText>
         </QuoteLine>
-      </QuoteBody>
+      </Heading>
       <QuoteCredits>Martin Luther King Jr.</QuoteCredits>
     </SectionContainer>
   )

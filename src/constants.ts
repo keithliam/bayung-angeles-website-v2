@@ -60,29 +60,6 @@ export const GLOBAL_CSS = css`
   }
 `
 
-export const HEADING_LINE_STYLES = `
-  font-family: ${FONT_FAMILY.HEADING};
-  font-size: 46px;
-  letter-spacing: 0.065em;
-  display: block;
-
-  ${MEDIAQUERY.LARGE} {
-    font-size: 40px;
-  }
-
-  ${MEDIAQUERY.SMALL} {
-    font-size: 38px;
-  }
-
-  ${MEDIAQUERY.TABLET} {
-    font-size: 35px;
-  }
-
-  ${MEDIAQUERY.MOBILE} {
-    font-size: 30px;
-  }
-`
-
 export const TEAM_CARDS_BREAKPOINT_MOBILE = '610px'
 export const TEAM_CARDS_BORDER_RADIUS = '15px'
 export const TEAM_CARDS_BACKGROUND_COLOR = '#EBEBEB'
