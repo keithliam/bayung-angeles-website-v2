@@ -3,7 +3,12 @@ import { css } from '@emotion/react'
 import Heading from '../../Heading'
 import CtaButton from '../../CtaButton'
 import DownloadAssetPreview from './DownloadAssetPreview'
-import { COLORS, MEDIAQUERY, PADDING } from '../../../constants'
+import {
+  COLORS,
+  MEDIAQUERY,
+  PADDING,
+  DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY,
+} from '../../../constants'
 import { previewAssets } from '../../../data/downloadPreviews'
 
 const SectionContainer = styled.div`
@@ -14,6 +19,11 @@ const SectionContainer = styled.div`
 
   ${MEDIAQUERY.SMALL} {
     padding: ${PADDING.PAGE_SMALL};
+  }
+
+  ${DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY} {
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   ${MEDIAQUERY.TABLET} {
@@ -28,6 +38,10 @@ const SectionContainer = styled.div`
 const Content = styled.div`
   color: ${COLORS.BA_BLUE};
   flex: 1;
+
+  ${DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY} {
+    width: 100%;
+  }
 `
 
 const headingStyles = css`
@@ -58,6 +72,10 @@ const AssetsPreviewContainer = styled.div`
   flex: 0;
   display: flex;
   align-items: center;
+
+  ${DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY} {
+    margin-top: 50px;
+  }
 `
 
 const AssetsPreview = styled.div`
@@ -75,6 +93,24 @@ const AssetsPreview = styled.div`
   ${MEDIAQUERY.SMALL} {
     height: 250px;
     width: 313px;
+  }
+
+  ${DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY} {
+    height: 289px;
+    width: 363px;
+    margin-left: 0;
+  }
+
+  ${MEDIAQUERY.TABLET} {
+    height: 319px;
+    width: 400px;
+    margin-left: 20px;
+  }
+
+  ${MEDIAQUERY.MOBILE} {
+    height: 230px;
+    width: 288px;
+    margin-left: 20px;
   }
 `
 
