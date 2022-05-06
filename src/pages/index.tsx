@@ -11,6 +11,7 @@ import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar/Navbar'
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const Container = styled.div`
 const IndexPage = () => (
   <Container>
     <Global styles={GLOBAL_CSS} />
+    <Navbar />
     <CoverSection />
     <PillarsSection />
     <ImagineSection />
