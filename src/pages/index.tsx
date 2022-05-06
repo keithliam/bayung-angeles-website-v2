@@ -10,6 +10,7 @@ import DownloadsSection from '../components/landing/DownloadsSection/DownloadsSe
 import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
+import Footer from '../components/Footer'
 
 const Container = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ const IndexPage = () => (
     <TeamSection />
     <GetInvolvedSection />
     <DownloadsSection />
+    <Footer />
   </Container>
 )
 
