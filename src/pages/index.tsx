@@ -5,6 +5,7 @@ import PillarsSection from '../components/landing/PillarsSection/PillarsSection'
 import ImagineSection from '../components/landing/ImagineSection/ImagineSection'
 import QuoteSection from '../components/landing/QuoteSection'
 import TeamSection from '../components/landing/TeamSection/TeamSection'
+import GetInvolvedSection from '../components/landing/GetInvolvedSection'
 import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
@@ -25,6 +26,7 @@ const IndexPage = () => (
     <ImagineSection />
     <QuoteSection />
     <TeamSection />
+    <GetInvolvedSection />
   </Container>
 )
 
