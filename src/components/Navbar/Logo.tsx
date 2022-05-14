@@ -66,12 +66,14 @@ const Logo = ({ completeLogo = false, wingColor = 'white', color = 'white' }: Pr
       <StaticImage
         css={wingLogoImageStyles}
         src="../../images/ba-logo-mini-white.png"
+        placeholder="blurred"
         alt="BÁ Logo"
       />
     ) : (
       <StaticImage
         css={wingLogoImageStyles}
         src="../../images/ba-logo-mini-gold.png"
+        placeholder="blurred"
         alt="BÁ Logo"
       />
     )}

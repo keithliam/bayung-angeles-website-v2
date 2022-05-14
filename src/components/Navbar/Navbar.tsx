@@ -5,6 +5,10 @@ import PlainNavbar from './PlainNavbar'
 import FixedNavbar from './FixedNavbar'
 import { registerScrollResizeEventListeners } from '../../helpers'
 
+interface Props {
+  showLogo?: boolean
+}
+
 const fixedNavbarTransitionStyles = {
   enterExitExitActive: `
     transition: transform 0.75s ease-in-out;
@@ -16,7 +20,7 @@ const fixedNavbarTransitionStyles = {
   `,
 }
 
-const Navbar = () => {
+const Navbar = ({ showLogo = false }: Props) => {
   const [showFixedNavbar, setShowFixedNavbar] = useState(false)
 
   useEffect(() => {
@@ -30,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-      <PlainNavbar />
+      <PlainNavbar showLogo={showLogo} />
       <ClassNames>
         {({ css: generateCss }) => (
           <CSSTransition
