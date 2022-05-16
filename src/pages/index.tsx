@@ -1,5 +1,4 @@
-import { Global } from '@emotion/react'
-import styled from '@emotion/styled'
+import Layout from '../layout/Layout'
 import CoverSection from '../components/landing/CoverSection'
 import PillarsSection from '../components/landing/PillarsSection/PillarsSection'
 import ImagineSection from '../components/landing/ImagineSection/ImagineSection'
@@ -7,24 +6,11 @@ import QuoteSection from '../components/landing/QuoteSection'
 import TeamSection from '../components/landing/TeamSection/TeamSection'
 import GetInvolvedSection from '../components/landing/GetInvolvedSection'
 import DownloadsSection from '../components/landing/DownloadsSection/DownloadsSection'
-import { COLORS, GLOBAL_CSS } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar/Navbar'
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${COLORS.BA_BLUE};
-  flex-direction: column;
-`
 
 const IndexPage = () => (
-  <Container>
-    <Global styles={GLOBAL_CSS} />
-    <Navbar />
+  <Layout>
     <CoverSection />
     <PillarsSection />
     <ImagineSection />
@@ -32,8 +18,7 @@ const IndexPage = () => (
     <TeamSection />
     <GetInvolvedSection />
     <DownloadsSection />
-    <Footer />
-  </Container>
+  </Layout>
 )
 
 export default IndexPage
