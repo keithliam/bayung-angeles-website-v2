@@ -8,6 +8,7 @@ import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
 
 interface Props {
+  showNavbarLogo?: boolean
   children?: ReactNode
 }
 
@@ -19,10 +20,10 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ showNavbarLogo = false, children }: Props) => (
   <Container>
     <Global styles={GLOBAL_CSS} />
-    <Navbar />
+    <Navbar showLogo={showNavbarLogo} />
     {children}
     <Footer />
   </Container>
