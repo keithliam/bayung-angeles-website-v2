@@ -6,8 +6,6 @@ import QuoteSection from '../components/landing/QuoteSection'
 import TeamSection from '../components/landing/TeamSection/TeamSection'
 import GetInvolvedSection from '../components/landing/GetInvolvedSection'
 import DownloadsSection from '../components/landing/DownloadsSection/DownloadsSection'
-import '../fonts/fonts.css'
-import '@fontsource/public-sans/variable.css'
 
 const IndexPage = () => (
   <Layout>
