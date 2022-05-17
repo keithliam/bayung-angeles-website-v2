@@ -6,10 +6,11 @@ interface Props {
   className?: string
   text: string
   color: CtaButtonColor
-  onClick: () => void
+  onClick?: () => void
 }
 
 const ButtonContainer = styled.button<{ color: CtaButtonColor }>`
+  margin: 0;
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
