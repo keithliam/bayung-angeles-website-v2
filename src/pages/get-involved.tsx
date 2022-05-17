@@ -1,26 +1,32 @@
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 import Layout from '../layout/Layout'
+import Section from '../components/getInvolved/Section/Section'
+import StepOneSubsection from '../components/getInvolved/StepOneSubsection'
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
 
-const Container = styled.div`
-  height: calc(100vh - 67px);
-  width: 100vw;
-  background-color: white;
+const getInvolvedSectionStyles = css`
+  padding-top: 90px;
 
   ${MEDIAQUERY.SMALL} {
-    height: calc(100vh - 62px);
+    padding-top: 85px;
   }
 
-  ${MEDIAQUERY.MOBILE} {
-    height: calc(100vh - 51px);
+  ${MEDIAQUERY.TABLET} {
+    padding-top: 80px;
   }
 `
 
 const GetInvolvedPage = () => (
   <Layout showNavbarLogo>
-    <Container />
+    <Section
+      headingCss={getInvolvedSectionStyles}
+      title="Get Involved 🤝"
+      subtitle="Each one of us can make a difference."
+    >
+      <StepOneSubsection />
+    </Section>
   </Layout>
 )
 
