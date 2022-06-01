@@ -24,8 +24,8 @@ const Header = () => (
 
 const Content = () => <SocialMediaLinks color="blue" linkCss={socialMediaLinkCss} />
 
-const StepOneSubsection = () => (
+const StepThreeSubsection = () => (
   <Subsection stepNumber={3} headerComponent={Header} contentComponent={Content} />
 )
 
-export default StepOneSubsection
+export default StepThreeSubsection

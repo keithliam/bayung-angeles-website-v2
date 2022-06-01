@@ -26,7 +26,7 @@ const Preview = () => (
   />
 )
 
-const StepOneSubsection = () => (
+const StepTwoSubsection = () => (
   <Subsection
     stepNumber={2}
     headerComponent={Header}
@@ -37,4 +37,4 @@ const StepOneSubsection = () => (
   />
 )
 
-export default StepOneSubsection
+export default StepTwoSubsection
