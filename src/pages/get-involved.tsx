@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import Layout from '../layout/Layout'
 import Section from '../components/getInvolved/Section/Section'
 import StepOneSubsection from '../components/getInvolved/StepOneSubsection'
+import StepTwoSubsection from '../components/getInvolved/StepTwoSubsection'
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
@@ -26,6 +27,7 @@ const GetInvolvedPage = () => (
       subtitle="Each one of us can make a difference."
     >
       <StepOneSubsection />
+      <StepTwoSubsection />
     </Section>
   </Layout>
 )
