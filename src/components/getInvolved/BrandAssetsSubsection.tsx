@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import { StaticImage } from 'gatsby-plugin-image'
 import Subsection from './Subsection/Subsection'
+import { brandAssetsLink } from '../../data/downloads'
 
 const previewImageStyles = css`
   aspect-ratio: 1.78;
@@ -25,7 +26,7 @@ const BrandAssetsSubsection = () => (
     headerComponent={Header}
     contentComponent={Content}
     previewComponent={Preview}
-    link="https://bit.ly/bayung-angeles-facebook-page"
+    link={brandAssetsLink}
     linkButtonText="Download"
     smallPreview
   />
