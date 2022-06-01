@@ -7,6 +7,7 @@ import StepThreeSubsection from '../components/getInvolved/StepThreeSubsection'
 import StepFourSubsection from '../components/getInvolved/StepFourSubsection/StepFourSubsection'
 import StepFiveSubsection from '../components/getInvolved/StepFiveSubsection'
 import DonationSubsection from '../components/getInvolved/DonationSubsection'
+import BrandGuidelinesSubsection from '../components/getInvolved/BrandGuidelinesSubsection'
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
@@ -36,6 +37,9 @@ const GetInvolvedPage = () => (
       <StepFourSubsection />
       <StepFiveSubsection />
       <DonationSubsection />
+    </Section>
+    <Section title="Download Assets 💾" subtitle="Introduce others to the movement.">
+      <BrandGuidelinesSubsection />
     </Section>
   </Layout>
 )
