@@ -4,6 +4,7 @@ import Section from '../components/getInvolved/Section/Section'
 import StepOneSubsection from '../components/getInvolved/StepOneSubsection'
 import StepTwoSubsection from '../components/getInvolved/StepTwoSubsection'
 import StepThreeSubsection from '../components/getInvolved/StepThreeSubsection'
+import StepFourSubsection from '../components/getInvolved/StepFourSubsection/StepFourSubsection'
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
@@ -30,6 +31,7 @@ const GetInvolvedPage = () => (
       <StepOneSubsection />
       <StepTwoSubsection />
       <StepThreeSubsection />
+      <StepFourSubsection />
     </Section>
   </Layout>
 )
