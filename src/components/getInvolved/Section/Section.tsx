@@ -72,6 +72,7 @@ const Content = styled.div`
   position: relative;
   background-color: ${COLORS.BA_SMOKE};
   overflow: hidden;
+  z-index: 1;
 `
 
 const Section = ({ headingCss, title, subtitle, children }: Props) => (

@@ -15,6 +15,7 @@ interface Props {
   previewComponent?: () => ReactNode
   link?: string
   linkButtonText?: string
+  smallPreview?: boolean
 }
 
 const SectionContainer = styled.div`
@@ -102,13 +103,13 @@ const linkButtonStyles = css`
 `
 
 const previewBoxShadowColor = 'rgba(0, 0, 0, 0.16)'
-const ImagePreviewContainer = styled.a`
+const ImagePreviewContainer = styled.a<{ small?: boolean }>`
   margin-left: ${PADDING.PAGE_DEFAULT};
   transition: filter 0.5s ease-out, transform 0.5s ease-out;
   filter: drop-shadow(3px 3px 16px ${previewBoxShadowColor});
   transform: scale(1);
   transform-origin: right center;
-  height: 400px;
+  height: ${({ small }) => (small ? 270 : 400)}px;
   position: relative;
   z-index: 3;
 
@@ -118,29 +119,29 @@ const ImagePreviewContainer = styled.a`
   }
 
   ${MEDIAQUERY.LARGE} {
-    height: 350px;
+    height: ${({ small }) => (small ? 250 : 350)}px;
   }
 
   ${MEDIAQUERY.SMALL} {
     margin-left: 0;
     margin-top: 50px;
-    height: 320px;
+    height: ${({ small }) => (small ? 240 : 320)}px;
   }
 
   ${MEDIAQUERY.TABLET} {
     margin-left: ${PADDING.PAGE_TABLET};
     margin-top: 40px;
-    height: 300px;
+    height: ${({ small }) => (small ? 220 : 300)}px;
   }
 
   ${MEDIAQUERY.MOBILE} {
     margin-left: ${PADDING.PAGE_MOBILE};
     margin-top: 35px;
-    height: 250px;
+    height: ${({ small }) => (small ? 200 : 250)}px;
   }
 
   @media (max-width: 415px) {
-    height: 230px;
+    height: ${({ small }) => (small ? 170 : 230)}px;
   }
 `
 
@@ -153,6 +154,7 @@ const Subsection = ({
   previewComponent,
   link,
   linkButtonText,
+  smallPreview = false,
 }: Props) => (
   <SectionContainer>
     {stepNumber && <StepNumber css={stepNumberCss} number={stepNumber} />}
@@ -165,7 +167,7 @@ const Subsection = ({
       )}
     </SectionContent>
     {previewComponent && (
-      <ImagePreviewContainer href={link} target="_blank" rel="noreferrer">
+      <ImagePreviewContainer href={link} target="_blank" rel="noreferrer" small={smallPreview}>
         {previewComponent()}
       </ImagePreviewContainer>
     )}
