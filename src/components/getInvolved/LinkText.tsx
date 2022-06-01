@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { COLORS } from '../../constants'
 
 interface Props {
+  className?: string
   href: string
   text: string
 }
@@ -15,8 +16,8 @@ const Link = styled.a`
   }
 `
 
-const LinkText = ({ href, text }: Props) => (
-  <Link href={href} target="_blank" rel="noreferrer">
+const LinkText = ({ className, href, text }: Props) => (
+  <Link className={className} href={href} target="_blank" rel="noreferrer">
     {text}
   </Link>
 )
