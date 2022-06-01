@@ -6,6 +6,7 @@ import HighlightText from './HighlightText'
 
 const previewImageStyles = css`
   aspect-ratio: 1.2;
+  height: 100%;
 `
 
 const Header = () => (
