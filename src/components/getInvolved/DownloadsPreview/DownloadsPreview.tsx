@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import PreviewItem from './PreviewItem'
-import { registerScrollResizeEventListeners } from '../../../../helpers'
-import { Preview } from '../../../../data/downloads'
-import { MEDIAQUERY } from '../../../../constants'
+import { registerScrollResizeEventListeners } from '../../../helpers'
+import { Preview } from '../../../data/downloads'
+import { MEDIAQUERY } from '../../../constants'
 
 interface Props {
   previews: Preview[]

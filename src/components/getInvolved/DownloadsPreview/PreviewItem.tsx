@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Preview } from '../../../../data/downloads'
-import { GatsbyImageQueryFile } from '../../../../constants'
+import { Preview } from '../../../data/downloads'
+import { GatsbyImageQueryFile } from '../../../constants'
 
 const PREVIEWS_BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.16)'
 
