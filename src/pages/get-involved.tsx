@@ -12,6 +12,7 @@ import BrandAssetsSubsection from '../components/getInvolved/BrandAssetsSubsecti
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
+import StickersSubsection from '../components/getInvolved/StickersSubsection/StickersSubsection'
 
 const getInvolvedSectionStyles = css`
   padding-top: 90px;
@@ -42,6 +43,7 @@ const GetInvolvedPage = () => (
     <Section title="Download Assets 💾" subtitle="Introduce others to the movement.">
       <BrandGuidelinesSubsection />
       <BrandAssetsSubsection />
+      <StickersSubsection />
     </Section>
   </Layout>
 )
