@@ -44,6 +44,12 @@ const Link = styled.a<{ transitionDelay: number; visible: boolean }>`
   }
 `
 
+const imageTagStyles = css`
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+`
+
 interface PreviewQueryData {
   [k: string]: GatsbyImageQueryFile | undefined
   atinBayu: GatsbyImageQueryFile
@@ -70,6 +76,23 @@ interface PreviewQueryData {
   jeep12: GatsbyImageQueryFile
   wingsEssential: GatsbyImageQueryFile
   abayanYuKePu: GatsbyImageQueryFile
+  slate: GatsbyImageQueryFile
+  coverPhoto: GatsbyImageQueryFile
+  silhouette: GatsbyImageQueryFile
+  illustration: GatsbyImageQueryFile
+  illustrationLandscape: GatsbyImageQueryFile
+  background1Portrait: GatsbyImageQueryFile
+  background1: GatsbyImageQueryFile
+  background2: GatsbyImageQueryFile
+  calendar: GatsbyImageQueryFile
+  cvRivera: GatsbyImageQueryFile
+  cvJuan: GatsbyImageQueryFile
+  cvArceo: GatsbyImageQueryFile
+  cvDayrit: GatsbyImageQueryFile
+  cvSantiago: GatsbyImageQueryFile
+  cvQuito: GatsbyImageQueryFile
+  cvAloot: GatsbyImageQueryFile
+  cvMaiquez: GatsbyImageQueryFile
 }
 
 const query = graphql`
@@ -194,15 +217,108 @@ const query = graphql`
         gatsbyImageData(placeholder: BLURRED)
       }
     }
+    slate: file(relativePath: { eq: "download-previews/posters-wallpapers/slate.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    coverPhoto: file(relativePath: { eq: "download-previews/posters-wallpapers/cover-photo.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    silhouette: file(relativePath: { eq: "download-previews/posters-wallpapers/silhouette.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    illustration: file(
+      relativePath: { eq: "download-previews/posters-wallpapers/illustration.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    illustrationLandscape: file(
+      relativePath: { eq: "download-previews/posters-wallpapers/illustration-landscape.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    background1Portrait: file(
+      relativePath: { eq: "download-previews/posters-wallpapers/bg-1-portrait.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    background1: file(relativePath: { eq: "download-previews/posters-wallpapers/bg-1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    background2: file(relativePath: { eq: "download-previews/posters-wallpapers/bg-2.png" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    calendar: file(relativePath: { eq: "download-previews/posters-wallpapers/calendar.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvRivera: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-rivera.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvJuan: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-juan.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvArceo: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-arceo.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvDayrit: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-dayrit.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvSantiago: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-santiago.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvQuito: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-quito.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvAloot: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-aloot.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    cvMaiquez: file(relativePath: { eq: "download-previews/posters-wallpapers/cv-maiquez.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
   }
 `
 
 const PreviewItem = ({ item, fadeDelay, visible }: Props) => {
   const data: PreviewQueryData = useStaticQuery(query)
 
-  const { source, link, aspectRatio } = item
-  const previewImage = data[source]?.childImageSharp?.gatsbyImageData
-  if (previewImage === undefined) throw new Error('Preview image not found')
+  const { source, imageSource, link, aspectRatio } = item
+  const gatsbyPreviewImage = source ? data[source]?.childImageSharp?.gatsbyImageData : undefined
+
+  const imageExists = gatsbyPreviewImage || imageSource
+  if (!imageExists) throw new Error('Preview image not found')
 
   const imageStyles = css`
     aspect-ratio: ${aspectRatio};
@@ -216,7 +332,11 @@ const PreviewItem = ({ item, fadeDelay, visible }: Props) => {
       transitionDelay={fadeDelay}
       visible={visible}
     >
-      <GatsbyImage css={imageStyles} image={previewImage} alt="Download preview" />
+      {imageExists && gatsbyPreviewImage ? (
+        <GatsbyImage css={imageStyles} image={gatsbyPreviewImage} alt="Download preview" />
+      ) : (
+        <img css={[imageTagStyles, imageStyles]} src={imageSource} alt="Download preview" />
+      )}
     </Link>
   )
 }
