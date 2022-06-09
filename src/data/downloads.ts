@@ -162,7 +162,7 @@ export const postersWallpapers: PosterWallpaperPreview[] = [
   {
     source: 'illustration',
     link: 'https://bit.ly/3sTUYc2',
-    aspectRatio: 1,
+    aspectRatio: 0.85,
   },
   {
     source: 'illustrationLandscape',
