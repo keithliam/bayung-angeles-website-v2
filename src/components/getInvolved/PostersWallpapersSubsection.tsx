@@ -4,7 +4,7 @@ import { allPostersWallpapersLink, postersWallpapers } from '../../data/download
 
 const Header = () => 'Poster & Wallpaper Designs'
 
-const Content = () => <DownloadsPreview previews={postersWallpapers} />
+const Content = () => <DownloadsPreview previews={postersWallpapers} large />
 
 const PostersWallpapersSubsection = () => (
   <Subsection
