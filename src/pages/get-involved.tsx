@@ -9,10 +9,11 @@ import StepFiveSubsection from '../components/getInvolved/StepFiveSubsection'
 import DonationSubsection from '../components/getInvolved/DonationSubsection'
 import BrandGuidelinesSubsection from '../components/getInvolved/BrandGuidelinesSubsection'
 import BrandAssetsSubsection from '../components/getInvolved/BrandAssetsSubsection'
+import StickersSubsection from '../components/getInvolved/StickersSubsection/StickersSubsection'
+import PostersWallpapersSubsection from '../components/getInvolved/PostersWallpapersSubsection'
 import { MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
-import StickersSubsection from '../components/getInvolved/StickersSubsection/StickersSubsection'
 
 const getInvolvedSectionStyles = css`
   padding-top: 90px;
@@ -44,6 +45,7 @@ const GetInvolvedPage = () => (
       <BrandGuidelinesSubsection />
       <BrandAssetsSubsection />
       <StickersSubsection />
+      <PostersWallpapersSubsection />
     </Section>
   </Layout>
 )

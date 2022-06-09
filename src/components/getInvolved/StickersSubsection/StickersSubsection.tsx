@@ -1,5 +1,5 @@
 import Subsection from '../Subsection/Subsection'
-import DownloadsPreview from './DownloadsPreview/DownloadsPreview'
+import DownloadsPreview from '../DownloadsPreview/DownloadsPreview'
 import { allStickersLink, stickers } from '../../../data/downloads'
 
 const Header = () => 'Sticker Designs'

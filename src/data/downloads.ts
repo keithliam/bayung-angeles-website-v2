@@ -1,10 +1,14 @@
+import baIllustrationAnimated from '../images/download-previews/ba-illus-animated.gif'
+
 export const brandGuideLink = 'https://bit.ly/3HVYRDt'
 export const brandAssetsLink = 'https://bit.ly/36mE7XB'
 
 export const allStickersLink = 'https://bit.ly/ba-sticker-downloads'
+export const allPostersWallpapersLink = 'https://bit.ly/ba-poster-wallpaper-downloads'
 
 export interface Preview {
-  source: string
+  source?: string
+  imageSource?: string
   link: string
   aspectRatio: number
 }
@@ -130,5 +134,99 @@ export const stickers: StickerPreview[] = [
     source: 'abayanYuKePu',
     link: 'https://bit.ly/ba-sticker-abayan-yu-ke-pu',
     aspectRatio: 1,
+  },
+]
+
+export interface PosterWallpaperPreview extends Preview {}
+export const postersWallpapers: PosterWallpaperPreview[] = [
+  {
+    source: 'slate',
+    link: 'https://bit.ly/3GUfNsv',
+    aspectRatio: 1.5,
+  },
+  {
+    source: 'coverPhoto',
+    link: 'https://bit.ly/3LErgAe',
+    aspectRatio: 2.29,
+  },
+  {
+    source: 'silhouette',
+    link: 'https://bit.ly/3GXalFe',
+    aspectRatio: 1.33,
+  },
+  {
+    imageSource: baIllustrationAnimated,
+    link: 'https://bit.ly/34OcA0L',
+    aspectRatio: 1,
+  },
+  {
+    source: 'illustration',
+    link: 'https://bit.ly/3sTUYc2',
+    aspectRatio: 0.85,
+  },
+  {
+    source: 'illustrationLandscape',
+    link: 'https://bit.ly/3rWFZyL',
+    aspectRatio: 1.5,
+  },
+  {
+    source: 'background1Portrait',
+    link: 'https://bit.ly/3JAvsiI',
+    aspectRatio: 0.56,
+  },
+  {
+    source: 'background1',
+    link: 'https://bit.ly/3Jw8Z6c',
+    aspectRatio: 1.78,
+  },
+  {
+    source: 'background2',
+    link: 'https://bit.ly/33v2Nw2',
+    aspectRatio: 1.78,
+  },
+  {
+    source: 'calendar',
+    link: 'https://bit.ly/3uSF8Rr',
+    aspectRatio: 0.72,
+  },
+  {
+    source: 'cvRivera',
+    link: 'https://bit.ly/3rYVd6k',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvJuan',
+    link: 'https://bit.ly/3LG4Qi0',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvArceo',
+    link: 'https://bit.ly/3sJXKk0',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvDayrit',
+    link: 'https://bit.ly/3sMX2lT',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvSantiago',
+    link: 'https://bit.ly/3oYdoab',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvQuito',
+    link: 'https://bit.ly/33r29Q2',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvAloot',
+    link: 'https://bit.ly/3Bt5ryH',
+    aspectRatio: 0.77,
+  },
+  {
+    source: 'cvMaiquez',
+    link: 'https://bit.ly/350OVde',
+    aspectRatio: 0.77,
   },
 ]
