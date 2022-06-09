@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Preview } from '../../../data/downloads'
-import { GatsbyImageQueryFile } from '../../../constants'
+import { GatsbyImageQueryFile, MEDIAQUERY } from '../../../constants'
 
 const PREVIEWS_BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.16)'
 
@@ -38,10 +38,14 @@ const Link = styled.a<{ transitionDelay: number; visible: boolean; large: boolea
 
   &:hover {
     filter: drop-shadow(3px 3px 36px ${PREVIEWS_BOX_SHADOW_COLOR});
-    transform: scale(${({ large }) => (large ? 1.75 : 2)});
     position: relative;
     z-index: 3;
     transition-delay: 0ms;
+    transform: scale(${({ large }) => (large ? 1.75 : 2)});
+
+    ${MEDIAQUERY.MOBILE} {
+      transform: none;
+    }
   }
 `
 
