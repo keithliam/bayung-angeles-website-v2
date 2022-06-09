@@ -11,9 +11,10 @@ interface Props {
   item: Preview
   fadeDelay: number
   visible: boolean
+  large?: boolean
 }
 
-const Link = styled.a<{ transitionDelay: number; visible: boolean }>`
+const Link = styled.a<{ transitionDelay: number; visible: boolean; large: boolean }>`
   width: 100%;
   background-color: white;
   border-radius: 18px;
@@ -37,7 +38,7 @@ const Link = styled.a<{ transitionDelay: number; visible: boolean }>`
 
   &:hover {
     filter: drop-shadow(3px 3px 36px ${PREVIEWS_BOX_SHADOW_COLOR});
-    transform: scale(2);
+    transform: scale(${({ large }) => (large ? 1.75 : 2)});
     position: relative;
     z-index: 3;
     transition-delay: 0ms;
@@ -311,7 +312,7 @@ const query = graphql`
   }
 `
 
-const PreviewItem = ({ item, fadeDelay, visible }: Props) => {
+const PreviewItem = ({ item, fadeDelay, visible, large = false }: Props) => {
   const data: PreviewQueryData = useStaticQuery(query)
 
   const { source, imageSource, link, aspectRatio } = item
@@ -331,6 +332,7 @@ const PreviewItem = ({ item, fadeDelay, visible }: Props) => {
       rel="noreferrer"
       transitionDelay={fadeDelay}
       visible={visible}
+      large={large}
     >
       {imageExists && gatsbyPreviewImage ? (
         <GatsbyImage css={imageStyles} image={gatsbyPreviewImage} alt="Download preview" />

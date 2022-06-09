@@ -7,34 +7,50 @@ import { MEDIAQUERY } from '../../../constants'
 
 interface Props {
   previews: Preview[]
+  large?: boolean
 }
 
-const Container = styled.div`
+const Container = styled.div<{ large: boolean }>`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 30px;
+  ${({ large }) =>
+    large
+      ? `
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      
+    ${MEDIAQUERY.TABLET} {
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
 
-  ${MEDIAQUERY.LARGE} {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
+    ${MEDIAQUERY.MOBILE} {
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    }
+  `
+      : `
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 
-  ${MEDIAQUERY.SMALL} {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 25px;
-  }
+    ${MEDIAQUERY.LARGE} {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
 
-  ${MEDIAQUERY.TABLET} {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 20px;
-  }
+    ${MEDIAQUERY.SMALL} {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 25px;
+    }
 
-  ${MEDIAQUERY.MOBILE} {
-    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-    gap: 15px;
-  }
+    ${MEDIAQUERY.TABLET} {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 20px;
+    }
+
+    ${MEDIAQUERY.MOBILE} {
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+      gap: 15px;
+    }
+  `}
 `
 
-const DownloadsPreview = ({ previews }: Props) => {
+const DownloadsPreview = ({ previews, large = false }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [previewsAppear, setPreviewsAppear] = useState(false)
 
@@ -56,13 +72,14 @@ const DownloadsPreview = ({ previews }: Props) => {
   }, [previewsAppear])
 
   return (
-    <Container ref={containerRef}>
+    <Container ref={containerRef} large={large}>
       {previews.map((preview, index) => (
         <PreviewItem
           key={preview.source}
           item={preview}
           fadeDelay={index * 50}
           visible={previewsAppear}
+          large={large}
         />
       ))}
     </Container>
