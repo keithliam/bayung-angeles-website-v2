@@ -165,7 +165,7 @@ const Subsection = ({
       {headerComponent && <SectionHeader>{headerComponent()}</SectionHeader>}
       {contentComponent && <Content>{contentComponent()}</Content>}
       {link && linkButtonText && (
-        <CtaButton css={linkButtonStyles} color="gold" text={linkButtonText} />
+        <CtaButton css={linkButtonStyles} color="gold" text={linkButtonText} externalLink={link} />
       )}
     </SectionContent>
     {previewComponent && (

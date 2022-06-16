@@ -168,7 +168,12 @@ const GetInvolvedSection = () => {
           <OfficialEmoji color="white" />
         </Heading>
         <SubHeading>Show your support. Join the movement.</SubHeading>
-        <CtaButton css={ctaButtonStyles} color="blue" text="Get Involved" onClick={() => {}} />
+        <CtaButton
+          css={ctaButtonStyles}
+          color="blue"
+          text="Get Involved"
+          localLink="/get-involved"
+        />
       </Content>
       <ImageAnimation visible={showFlag}>
         <StaticImage

@@ -63,6 +63,7 @@ export const GLOBAL_CSS = css`
 export const TEAM_SECTION_ID = 'team-section'
 export const GET_INVOLVED_SECTION_ID = 'get-involved'
 export const STEP_THREE_SUBSECTION_ID = 'contact-us'
+export const DOWNLOADS_SECTION_ID = 'downloads'
 
 export const TEAM_CARDS_BREAKPOINT_MOBILE = '610px'
 export const TEAM_CARDS_BORDER_RADIUS = '15px'
