@@ -35,6 +35,12 @@ const config: GatsbyConfig = {
         exclude: ['node_modules', 'bower_components', '.cache', 'public'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -100,
+      },
+    },
   ],
 }
 

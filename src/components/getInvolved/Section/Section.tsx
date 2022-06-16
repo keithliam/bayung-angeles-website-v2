@@ -5,6 +5,7 @@ import HeadingBackground from './HeadingBackground'
 import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY, PADDING } from '../../../constants'
 
 interface Props {
+  id?: string
   headingCss?: Interpolation<Theme>
   title: string
   subtitle: string
@@ -75,8 +76,8 @@ const Content = styled.div`
   z-index: 1;
 `
 
-const Section = ({ headingCss, title, subtitle, children }: Props) => (
-  <SectionContainer>
+const Section = ({ id, headingCss, title, subtitle, children }: Props) => (
+  <SectionContainer id={id}>
     <SectionHeading css={headingCss}>
       <HeadingBackground />
       <HeadingText>{title}</HeadingText>

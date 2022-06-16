@@ -11,7 +11,7 @@ import BrandGuidelinesSubsection from '../components/getInvolved/BrandGuidelines
 import BrandAssetsSubsection from '../components/getInvolved/BrandAssetsSubsection'
 import StickersSubsection from '../components/getInvolved/StickersSubsection/StickersSubsection'
 import PostersWallpapersSubsection from '../components/getInvolved/PostersWallpapersSubsection'
-import { MEDIAQUERY } from '../constants'
+import { GET_INVOLVED_SECTION_ID, MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
 
@@ -30,6 +30,7 @@ const getInvolvedSectionStyles = css`
 const GetInvolvedPage = () => (
   <Layout showNavbarLogo>
     <Section
+      id={GET_INVOLVED_SECTION_ID}
       headingCss={getInvolvedSectionStyles}
       title="Get Involved 🤝"
       subtitle="Each one of us can make a difference."

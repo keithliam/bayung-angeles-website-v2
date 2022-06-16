@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 import { css } from '@emotion/react'
 import { StaticImage } from 'gatsby-plugin-image'
 import OfficialEmoji from '../OfficialEmoji'
@@ -14,13 +14,12 @@ interface Props {
   wingColor?: WingColor
 }
 
-const Link = styled.a<{ color: LogoColor }>`
+const linkStyles = css`
   font-family: ${FONT_FAMILY.HEADING};
   font-size: 40px;
   font-weight: ${FONT_WEIGHT.NORMAL};
   letter-spacing: 0.125em;
   text-decoration: none;
-  color: ${({ color }) => (color === 'gold' ? COLORS.BA_GOLD : 'white')};
   text-align: left;
   flex: 0;
   white-space: nowrap;
@@ -56,28 +55,34 @@ const wingLogoImageStyles = css`
   }
 `
 
-const Logo = ({ completeLogo = false, wingColor = 'white', color = 'white' }: Props) => (
-  <Link href="google.com" color={color}>
-    {completeLogo ? (
-      <>
-        Báyung <WingText text="Ángeles" wingPosition="start" /> <OfficialEmoji />
-      </>
-    ) : wingColor === 'white' ? (
-      <StaticImage
-        css={wingLogoImageStyles}
-        src="../../images/ba-logo-mini-white.png"
-        placeholder="blurred"
-        alt="BÁ Logo"
-      />
-    ) : (
-      <StaticImage
-        css={wingLogoImageStyles}
-        src="../../images/ba-logo-mini-gold.png"
-        placeholder="blurred"
-        alt="BÁ Logo"
-      />
-    )}
-  </Link>
-)
+const Logo = ({ completeLogo = false, wingColor = 'white', color = 'white' }: Props) => {
+  const colorStyles = css`
+    color: ${color === 'gold' ? COLORS.BA_GOLD : 'white'};
+  `
+
+  return (
+    <Link css={[linkStyles, colorStyles]} to="/" color={color}>
+      {completeLogo ? (
+        <>
+          Báyung <WingText text="Ángeles" wingPosition="start" /> <OfficialEmoji />
+        </>
+      ) : wingColor === 'white' ? (
+        <StaticImage
+          css={wingLogoImageStyles}
+          src="../../images/ba-logo-mini-white.png"
+          placeholder="blurred"
+          alt="BÁ Logo"
+        />
+      ) : (
+        <StaticImage
+          css={wingLogoImageStyles}
+          src="../../images/ba-logo-mini-gold.png"
+          placeholder="blurred"
+          alt="BÁ Logo"
+        />
+      )}
+    </Link>
+  )
+}
 
 export default Logo

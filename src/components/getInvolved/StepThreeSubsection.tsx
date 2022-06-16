@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import Subsection from './Subsection/Subsection'
 import HighlightText from './HighlightText'
 import SocialMediaLinks from '../SocialMediaLinks'
+import { STEP_THREE_SUBSECTION_ID } from '../../constants'
 
 const socialMediaLinkCss = css`
   background-color: white;
@@ -25,7 +26,12 @@ const Header = () => (
 const Content = () => <SocialMediaLinks color="blue" linkCss={socialMediaLinkCss} />
 
 const StepThreeSubsection = () => (
-  <Subsection stepNumber={3} headerComponent={Header} contentComponent={Content} />
+  <Subsection
+    id={STEP_THREE_SUBSECTION_ID}
+    stepNumber={3}
+    headerComponent={Header}
+    contentComponent={Content}
+  />
 )
 
 export default StepThreeSubsection
