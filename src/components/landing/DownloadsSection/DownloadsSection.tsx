@@ -8,6 +8,7 @@ import {
   MEDIAQUERY,
   PADDING,
   DOWNLOADS_SECTION_FLEX_WRAP_MEDIAQUERY,
+  DOWNLOADS_SECTION_ID,
 } from '../../../constants'
 import { previewAssets } from '../../../data/downloadPreviews'
 
@@ -120,7 +121,12 @@ const DownloadsSection = () => (
       <Heading css={headingStyles}>
         Download wallpapers, stickers, Facebook frame, and more.
       </Heading>
-      <CtaButton css={ctaButtonStyles} color="gold" text="Downloads" onClick={() => {}} />
+      <CtaButton
+        css={ctaButtonStyles}
+        color="gold"
+        text="Downloads"
+        localLink={`/get-involved#${DOWNLOADS_SECTION_ID}`}
+      />
     </Content>
     <AssetsPreviewContainer>
       <AssetsPreview>

@@ -11,7 +11,7 @@ import BrandGuidelinesSubsection from '../components/getInvolved/BrandGuidelines
 import BrandAssetsSubsection from '../components/getInvolved/BrandAssetsSubsection'
 import StickersSubsection from '../components/getInvolved/StickersSubsection/StickersSubsection'
 import PostersWallpapersSubsection from '../components/getInvolved/PostersWallpapersSubsection'
-import { GET_INVOLVED_SECTION_ID, MEDIAQUERY } from '../constants'
+import { DOWNLOADS_SECTION_ID, GET_INVOLVED_SECTION_ID, MEDIAQUERY } from '../constants'
 import '../fonts/fonts.css'
 import '@fontsource/public-sans/variable.css'
 
@@ -42,7 +42,11 @@ const GetInvolvedPage = () => (
       <StepFiveSubsection />
       <DonationSubsection />
     </Section>
-    <Section title="Download Assets 💾" subtitle="Introduce others to the movement.">
+    <Section
+      id={DOWNLOADS_SECTION_ID}
+      title="Download Assets 💾"
+      subtitle="Introduce others to the movement."
+    >
       <BrandGuidelinesSubsection />
       <BrandAssetsSubsection />
       <StickersSubsection />
