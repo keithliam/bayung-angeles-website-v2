@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/filename-case */
 import type { GatsbyConfig } from 'gatsby'
 
 const siteTitle = 'Báyung Ángeles – Join the movement!'
