@@ -6,6 +6,11 @@ const siteDescription =
 const siteUrl = 'https://www.bayungangeles.org'
 
 const config: GatsbyConfig = {
+  siteMetadata: {
+    title: siteTitle,
+    description: siteDescription,
+    siteUrl,
+  },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
