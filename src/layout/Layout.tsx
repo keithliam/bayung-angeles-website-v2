@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
-import Seo from '../components/Seo'
+import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar/Navbar'
 import { COLORS, GLOBAL_CSS } from '../constants'
@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Layout = ({ showNavbarLogo = false, children }: Props) => (
   <Container>
-    <Seo />
+    <GatsbySeo />
     <Global styles={GLOBAL_CSS} />
     <Navbar showLogo={showNavbarLogo} />
     {children}

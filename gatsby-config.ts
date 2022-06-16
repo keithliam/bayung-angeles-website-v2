@@ -1,19 +1,38 @@
-/* eslint-disable unicorn/filename-case */
 import type { GatsbyConfig } from 'gatsby'
 
+const siteTitle = 'Báyung Ángeles – Join the movement!'
+const siteDescription =
+  'Báyung Ángeles is a community advocating social change through responsible, effective, and transparent public governance.'
+const siteUrl = 'https://www.bayungangeles.org'
+
 const config: GatsbyConfig = {
-  siteMetadata: {
-    title: 'Báyung Ángeles – Join the movement!',
-    description:
-      'Báyung Ángeles is a community advocating social change through responsible, effective, and transparent public governance.',
-    siteUrl: 'https://www.bayungangeles.org',
-    image: '/preview.png',
-  },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-next-seo',
+      options: {
+        title: siteTitle,
+        description: siteDescription,
+        language: 'en',
+        twitter: {
+          cardType: 'summary_large_image',
+          site: '@bayungangeles',
+        },
+        openGraph: {
+          title: siteTitle,
+          description: siteDescription,
+          type: 'website',
+          url: siteUrl,
+          images: [
+            {
+              url: `${siteUrl}/preview.png`,
+            },
+          ],
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
