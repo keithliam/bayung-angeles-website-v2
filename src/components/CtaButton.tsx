@@ -62,7 +62,7 @@ const CtaButton = ({ className, color, text, localLink, externalLink }: Props) =
   return localLink ? (
     <AnchorLink className={className} css={styles} to={localLink} title={text} />
   ) : (
-    <a href={externalLink} className={className} css={styles}>
+    <a className={className} css={styles} href={externalLink} target="_blank" rel="noreferrer">
       {text}
     </a>
   )
