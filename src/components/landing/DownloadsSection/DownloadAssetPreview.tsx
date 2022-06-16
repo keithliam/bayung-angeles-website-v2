@@ -1,9 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { css } from '@emotion/react'
-import styled from '@emotion/styled'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PreviewAsset, previewAssets } from '../../../data/downloadPreviews'
-import { GatsbyImageQueryFile } from '../../../constants'
+import { GatsbyImageQueryFile, DOWNLOADS_SECTION_ID } from '../../../constants'
 
 const BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.16)'
 
@@ -11,7 +11,7 @@ interface Props {
   assetPreviewIndex: number
 }
 
-const PreviewWithLink = styled.a`
+const previewWithLinkStyles = css`
   position: absolute;
   transition: filter 0.5s ease-out, transform 0.5s ease-out;
   filter: drop-shadow(3px 3px 16px ${BOX_SHADOW_COLOR});
@@ -79,13 +79,16 @@ const DownloadAssetPreview = ({ assetPreviewIndex }: Props) => {
 
   const imageExists = gatsbyPreviewImage || imageSource
   return (
-    <PreviewWithLink css={css(style)}>
+    <AnchorLink
+      css={[previewWithLinkStyles, css(style)]}
+      to={`/get-involved#${DOWNLOADS_SECTION_ID}`}
+    >
       {imageExists && gatsbyPreviewImage ? (
         <GatsbyImage css={previewImageStyles} image={gatsbyPreviewImage} alt={name} />
       ) : (
         <img css={previewImageStyles} src={imageSource} alt={name} />
       )}
-    </PreviewWithLink>
+    </AnchorLink>
   )
 }
 
