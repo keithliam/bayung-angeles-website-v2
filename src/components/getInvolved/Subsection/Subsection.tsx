@@ -7,6 +7,7 @@ import CtaButton from '../../CtaButton'
 import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY, PADDING } from '../../../constants'
 
 interface Props {
+  id?: string
   stepNumber?: number
   stepNumberCss?: Interpolation<Theme>
   showSeparator?: boolean
@@ -146,6 +147,7 @@ const ImagePreviewContainer = styled.a<{ small?: boolean }>`
 `
 
 const Subsection = ({
+  id,
   stepNumber,
   stepNumberCss,
   showSeparator = false,
@@ -156,7 +158,7 @@ const Subsection = ({
   linkButtonText,
   smallPreview = false,
 }: Props) => (
-  <SectionContainer>
+  <SectionContainer id={id}>
     {stepNumber && <StepNumber css={stepNumberCss} number={stepNumber} />}
     {showSeparator && <Separator />}
     <SectionContent>
