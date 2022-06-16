@@ -1,15 +1,25 @@
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY } from '../constants'
 
 export type CtaButtonColor = 'blue' | 'gold'
-interface Props {
+
+interface RequiredProps {
   className?: string
   text: string
   color: CtaButtonColor
-  onClick?: () => void
 }
+interface WithLocalLink extends RequiredProps {
+  localLink: string
+  externalLink?: string
+}
+interface WithExternalLink extends RequiredProps {
+  localLink?: string
+  externalLink: string
+}
+type Props = WithLocalLink | WithExternalLink
 
-const ButtonContainer = styled.button<{ color: CtaButtonColor }>`
+const buttonStyles = css`
   margin: 0;
   display: inline-block;
   text-transform: uppercase;
@@ -27,7 +37,6 @@ const ButtonContainer = styled.button<{ color: CtaButtonColor }>`
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
   color: white;
-  background-color: ${({ color }) => (color === 'blue' ? COLORS.BA_BLUE : COLORS.BA_GOLD)};
 
   ${MEDIAQUERY.SMALL} {
     font-size: 14px;
@@ -44,10 +53,19 @@ const ButtonContainer = styled.button<{ color: CtaButtonColor }>`
   }
 `
 
-const CtaButton = ({ className, color, text, onClick }: Props) => (
-  <ButtonContainer className={className} color={color} type="button" onClick={onClick}>
-    {text}
-  </ButtonContainer>
-)
+const CtaButton = ({ className, color, text, localLink, externalLink }: Props) => {
+  const backgroundColorStyles = `
+    background-color: ${color === 'blue' ? COLORS.BA_BLUE : COLORS.BA_GOLD};
+  `
+  const styles = [buttonStyles, backgroundColorStyles]
+
+  return localLink ? (
+    <AnchorLink className={className} css={styles} to={localLink} title={text} />
+  ) : (
+    <a href={externalLink} className={className} css={styles}>
+      {text}
+    </a>
+  )
+}
 
 export default CtaButton
