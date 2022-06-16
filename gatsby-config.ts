@@ -3,8 +3,11 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Báyung Ángeles`,
-    siteUrl: `https://www.bayungangeles.org`,
+    title: 'Báyung Ángeles',
+    description:
+      'Báyung Ángeles is a community advocating social change through responsible, effective, and transparent public governance.',
+    siteUrl: 'https://www.bayungangeles.org',
+    image: '/preview.png',
   },
   plugins: [
     'gatsby-plugin-emotion',
