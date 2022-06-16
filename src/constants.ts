@@ -60,6 +60,8 @@ export const GLOBAL_CSS = css`
   }
 `
 
+export const TEAM_SECTION_ID = 'team-section'
+
 export const TEAM_CARDS_BREAKPOINT_MOBILE = '610px'
 export const TEAM_CARDS_BORDER_RADIUS = '15px'
 export const TEAM_CARDS_BACKGROUND_COLOR = '#EBEBEB'

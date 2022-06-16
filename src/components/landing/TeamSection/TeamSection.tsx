@@ -15,6 +15,7 @@ import {
   MEDIAQUERY,
   PADDING,
   TEAM_CARDS_BREAKPOINT_MOBILE,
+  TEAM_SECTION_ID,
 } from '../../../constants'
 
 const SectionContainer = styled.div`
@@ -164,7 +165,7 @@ const TeamSection = () => {
   )
 
   return (
-    <SectionContainer ref={sectionRef}>
+    <SectionContainer ref={sectionRef} id={TEAM_SECTION_ID}>
       <StaticImage
         css={backgroundImageStyles}
         src="../../../images/ba-illus.jpg"
