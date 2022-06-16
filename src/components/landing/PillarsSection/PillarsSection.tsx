@@ -5,10 +5,8 @@ import Background from './Background'
 import Topic from './Topic'
 import { useSubsectionIndexObserver } from '../../../hooks'
 import { topics } from '../../../data/pillars'
-import { COLORS, MEDIAQUERY, PADDING } from '../../../constants'
+import { COLORS, MEDIAQUERY, PADDING, PILLARS_SECTION_ID } from '../../../constants'
 import Description from './Description'
-
-const PILLARS_SECTION_ID = 'pillars'
 
 const lastTopicIndex = topics.length - 1
 
