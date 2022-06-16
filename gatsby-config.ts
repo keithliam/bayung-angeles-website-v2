@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: 'Báyung Ángeles',
+    title: 'Báyung Ángeles – Join the movement!',
     description:
       'Báyung Ángeles is a community advocating social change through responsible, effective, and transparent public governance.',
     siteUrl: 'https://www.bayungangeles.org',

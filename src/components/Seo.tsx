@@ -32,7 +32,7 @@ const Seo = () => {
   const imageUrl = `${siteUrl}${image}`
 
   return (
-    <Helmet>
+    <Helmet title={title}>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <meta property="og:title" content={title} />
