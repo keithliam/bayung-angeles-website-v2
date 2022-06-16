@@ -1,12 +1,20 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import SocialMediaLinks from '../SocialMediaLinks'
 import PhotoCredit from '../PhotoCredit'
 import WingText from '../WingText'
 import OfficialEmoji from '../OfficialEmoji'
 import caratDown from '../../images/carat-down.svg'
-import { MEDIAQUERY, FONT_FAMILY, FONT_WEIGHT, COLORS, PADDING } from '../../constants'
+import {
+  MEDIAQUERY,
+  FONT_FAMILY,
+  FONT_WEIGHT,
+  COLORS,
+  PADDING,
+  PILLARS_SECTION_ID,
+} from '../../constants'
 
 const SectionContainer = styled.div`
   height: 100vh;
@@ -164,7 +172,7 @@ const BottomGradient = styled.div`
   align-items: flex-end;
 `
 
-const ScrollDownButton = styled.a`
+const scrollDownButtonStyles = css`
   padding: 20px;
   animation: bounce-down 4s ease-in-out infinite;
   background-color: transparent;
@@ -211,9 +219,9 @@ const CoverSection = () => (
       <ConnectText>Stay connected. Follow our socials.</ConnectText>
       <SocialMediaLinks css={socialMediaLinksStyles} linkCss={socialMediaLinkStyles} color="blue" />
       <BottomGradient>
-        <ScrollDownButton>
+        <AnchorLink css={scrollDownButtonStyles} to={`/#${PILLARS_SECTION_ID}`}>
           <img src={caratDown} alt="Scroll down" />
-        </ScrollDownButton>
+        </AnchorLink>
         <PhotoCredit
           css={photoCreditStyles}
           title="Mumunang Sala"
