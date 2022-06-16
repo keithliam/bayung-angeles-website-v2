@@ -13,6 +13,7 @@ import {
   FONT_WEIGHT,
   COLORS,
   PADDING,
+  COVER_SECTION_ID,
   PILLARS_SECTION_ID,
 } from '../../constants'
 
@@ -203,7 +204,7 @@ const photoCreditStyles = css`
 `
 
 const CoverSection = () => (
-  <SectionContainer>
+  <SectionContainer id={COVER_SECTION_ID}>
     <StaticImage
       css={backgroundImageStyles}
       placeholder="blurred"

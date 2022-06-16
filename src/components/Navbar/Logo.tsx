@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { css } from '@emotion/react'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { StaticImage } from 'gatsby-plugin-image'
 import OfficialEmoji from '../OfficialEmoji'
 import WingText from '../WingText'
-import { COLORS, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY } from '../../constants'
+import { COLORS, COVER_SECTION_ID, FONT_FAMILY, FONT_WEIGHT, MEDIAQUERY } from '../../constants'
 
 export type LogoColor = 'gold' | 'white'
 export type WingColor = 'gold' | 'white'
@@ -61,7 +61,7 @@ const Logo = ({ completeLogo = false, wingColor = 'white', color = 'white' }: Pr
   `
 
   return (
-    <Link css={[linkStyles, colorStyles]} to="/" color={color}>
+    <AnchorLink css={[linkStyles, colorStyles]} to={`/#${COVER_SECTION_ID}`}>
       {completeLogo ? (
         <>
           Báyung <WingText text="Ángeles" wingPosition="start" /> <OfficialEmoji />
@@ -81,7 +81,7 @@ const Logo = ({ completeLogo = false, wingColor = 'white', color = 'white' }: Pr
           alt="BÁ Logo"
         />
       )}
-    </Link>
+    </AnchorLink>
   )
 }
 
