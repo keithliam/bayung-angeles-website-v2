@@ -60,6 +60,7 @@ export const GLOBAL_CSS = css`
   }
 `
 
+export const COVER_SECTION_ID = 'home'
 export const PILLARS_SECTION_ID = 'pillars'
 export const TEAM_SECTION_ID = 'team-section'
 export const GET_INVOLVED_SECTION_ID = 'get-involved'
