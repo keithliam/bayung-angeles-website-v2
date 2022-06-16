@@ -33,6 +33,7 @@ const Seo = () => {
 
   return (
     <Helmet title={title}>
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <meta property="og:title" content={title} />
