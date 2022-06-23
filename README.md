@@ -19,6 +19,9 @@ A beautiful, responsive website built using TypeScript, Gatsby, and ReactJS.
 
 **Báyung Ángeles** is a community advocating social change through responsible, effective, and transparent public governance.
 
+##### This project was migrated from [keithliam/bayung-angeles-website](https://github.com/keithliam/bayung-angeles-website) that used JavaScript and SCSS.
+
+
 ### 🌐 Hosting
 
 The `production` branch is hooked up to [Gastby Cloud](https://www.gatsbyjs.com/products/cloud/) for automatic deployments. Builds are also generated for pull requests that target the `production` branch.
