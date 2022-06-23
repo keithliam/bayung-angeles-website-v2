@@ -1,0 +1,68 @@
+{
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-comments",
+    "promise",
+    "unicorn",
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-vars": ["warn"],
+    "import/prefer-default-export": 0,
+    "arrow-parens": ["error", "as-needed"],
+    "@typescript-eslint/no-empty-interface": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/destructuring-assignment": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "react/require-default-props": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/prop-types": 0,
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "eslint-comments/disable-enable-pair": ["error", { "allowWholeFile": true }],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "kebabCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "props": {
+            "properties": false
+          },
+          "ref": {
+            "reference": false
+          }
+        }
+      }
+    ],
+    "prettier/prettier": ["warn", { "printWidth": 100 }]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
