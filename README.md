@@ -2,6 +2,8 @@
 
 A beautiful, responsive website built using TypeScript, Gatsby, and ReactJS.
 
+###### This project was the result of a migration from [keithliam/bayung-angeles-website](https://github.com/keithliam/bayung-angeles-website) that used JavaScript and SCSS.
+
 [![Báyung Ángeles website](/screenshots/landing.png?raw=true)](https://bayungangeles.org/)
 
 ---
