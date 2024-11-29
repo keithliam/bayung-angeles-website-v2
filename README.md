@@ -23,7 +23,7 @@ A beautiful, responsive website built using TypeScript, Gatsby, and ReactJS.
 
 ### 🌐 Hosting
 
-The `production` branch is hooked up to [Gastby Cloud](https://www.gatsbyjs.com/products/cloud/) for automatic deployments. Builds are also generated for pull requests that target the `production` branch.
+The `production` branch is hooked up to [Netlify](https://www.netlify.com/) for automatic deployments. Builds are also generated for pull requests that target the `main` branch.
 
 ### 🛠 Technologies Used
 
